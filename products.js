@@ -62,10 +62,10 @@ window.STORE_PRODUCTS = [
   ,{
     id: "black-knight-letter-bracelet",
     category: "ACCESSORIES",
-    name: "Black Knight Letter Bracelet",
+    name: "Black Knight Matte H Bracelet",
     price: 14.99,
-    description: "Matte black letter bracelet with a modern couple-inspired style. Confirm the exact letter, material and finish before ordering. Shipping is calculated separately.",
-    image: "https://down-ph.img.susercontent.com/file/sg-11134201-22090-wh0xee1jo1hv77",
+    description: "Matte black enamel-style cuff bracelet with an H-shaped clasp and a modern couple-inspired look. Unbranded listing; confirm material, dimensions and finish before ordering. Shipping is calculated separately.",
+    image: "https://p3.itc.cn/q_70/images03/20220610/a16c3a2464f7476a9c6a377f9253ad89.jpeg",
     colours: ["Matte Black"],
     sizes: ["One size"]
   }
