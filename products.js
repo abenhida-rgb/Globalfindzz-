@@ -20,14 +20,14 @@ window.STORE_PRODUCTS = [
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
   },
   {
-    id: "crocs-clog",
+    id: "boken-slippers",
     category: "FOOTWEAR",
-    name: "Classic Clog",
-    price: 11,
-    description: "Classic clog style. Message us for available colours and sizes.",
-    image: "./images/classic-clog.jpg",
-    colours: ["Black", "White", "Navy", "Khaki", "Pink", "Other"],
-    sizes: ["EU 36", "EU 37", "EU 38", "EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
+    name: "BOKEN Closed-Toe Slip-On Slippers",
+    price: null,
+    description: "Unisex for men and women. Comfortable closed-toe slip-on slippers with a thick sole and easy buckle detail. Autumn/winter casual wear. Please confirm material, anti-slip performance and available sizes with us.",
+    image: "https://g-images.voghion.com/productImages/776fbebb9fc94cef612b7857a1328630_voghion790x790.jpg",
+    colours: ["Khaki", "Brown", "Black"],
+    sizes: ["EU 36–37", "EU 38–39", "EU 40–41"]
   },
   {
     id: "sunglasses",
