@@ -60,7 +60,7 @@ window.STORE_PRODUCTS = [
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
   ,{
-    id: "black-knight-letter-bracelet",
+    id: "Hermes bracelet",
     category: "ACCESSORIES",
     name: "Black Knight Matte Bracelet – Grey H Clasp",
     price: 14.99,
