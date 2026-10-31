@@ -66,7 +66,7 @@ window.STORE_PRODUCTS = [
     price: 14.99,
     description: "Unbranded matte enamel-style bangle with a grey-tone H-shaped clasp and a minimalist couple-inspired look. Confirm the exact item, material, finish and packaging before ordering. Not represented as an authentic Hermès product. Shipping is calculated separately.",
     image: "https://assets.hermes.cn/is/image/hermesproduct/703203FB5H_front_wm_101?%24product_default_bg%24=",
-    colours: ["Gris Clair Mat", "Grey H clasp"],
+    colours: ["Steel", "Black Knight"],
     sizes: ["One size"]
   }
 ];
