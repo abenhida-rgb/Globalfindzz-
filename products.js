@@ -45,7 +45,7 @@ window.STORE_PRODUCTS = [
     name: "Men's Y2K Contrast Patchwork Hooded Sweatshirt",
     price: 17,
     description: "Men's short-length Y2K-inspired contrast patchwork hooded sweatshirt with long sleeves and an oversized fit. Dark grey, 100% polyester. Check measurements before ordering.",
-    image: "",
+    image: "https://img.ltwebstatic.com/v4/j/pi/2025/10/21/c1/1761010339ff09c9df4ebe55bc734b6a2d885fb119_thumbnail_900x.webp",
     colours: ["Dark Grey"],
     sizes: ["S", "M", "L", "XL"]
   },
