@@ -22,7 +22,7 @@
     const message = [
       "Hello GlobalFindzz, I would like to ask about:",
       product.name,
-      "Price: " + money(product.price),
+      "Price: " + (product.price == null ? "Please quote" : money(product.price)),
       "Colour: " + colour,
       "Size: " + size,
       "Please confirm availability and delivery."
@@ -67,7 +67,7 @@
     meta.className = "product-meta";
     const category = document.createElement("span");
     category.className = "product-category";
-    category.textContent = "TRACKSUITS";
+    category.textContent = product.category || "COLLECTION";
     const number = document.createElement("span");
     number.className = "product-index";
     number.textContent = "0" + (index + 1);
@@ -77,7 +77,7 @@
     name.textContent = product.name;
     const price = document.createElement("div");
     price.className = "price";
-    price.textContent = money(product.price);
+    price.textContent = product.price == null ? "Price on request" : money(product.price);
     const description = document.createElement("p");
     description.className = "description";
     description.textContent = product.description;
