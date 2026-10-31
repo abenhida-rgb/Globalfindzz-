@@ -59,4 +59,13 @@ window.STORE_PRODUCTS = [
     colours: ["White", "Black", "Grey", "Mixed"],
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
+  ,{
+    id: "minimalist-bracelet",
+    category: "ACCESSORIES",
+    name: "Minimalist Bracelet",
+    price: 14.99,
+    description: "Minimalist everyday bracelet. Unbranded listing; confirm material, finish and available colour before ordering. Shipping is calculated separately.",
+    colours: ["Gold tone", "Silver tone", "Black", "Other"],
+    sizes: ["One size"]
+  }
 ];
