@@ -27,7 +27,7 @@
     catch (_) { return symbols[currency] + converted.toFixed(2); }
   }
   let detailProduct = null;
-  function openProductDetail(product) {
+  function openProductDetail(product, selectedColour = "", selectedSize = "") {
     detailProduct = product;
     const overlay = document.getElementById("product-detail-overlay");
     const gallery = document.getElementById("detail-gallery");
@@ -46,8 +46,8 @@
     }
     name.textContent=product.name; price.textContent=money(product.salePrice ?? product.price); desc.textContent=product.description || "";
     colours.replaceChildren(); const colourValues=product.colours || ["One colour"];
-    colourValues.forEach((value,i)=>{const b=document.createElement("button");b.type="button";b.className="variant-chip"+(i===0?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{colours.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");const variantImage=product.variantImages && (product.variantImages[value] || product.variantImages[value.toLowerCase()]);if(variantImage)main.src=variantImage;});colours.append(b);});
-    sizes.replaceChildren(); (product.sizes || ["One size"]).forEach((value,i)=>{const b=document.createElement("button");b.type="button";b.className="variant-chip size-chip"+(i===0?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{sizes.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");});sizes.append(b);});
+    colourValues.forEach((value,i)=>{const selected=selectedColour ? value===selectedColour : i===0;const b=document.createElement("button");b.type="button";b.className="variant-chip"+(selected?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(selected));b.addEventListener("click",()=>{colours.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");const variantImage=product.variantImages && (product.variantImages[value] || product.variantImages[value.toLowerCase()]);if(variantImage)main.src=variantImage;});colours.append(b);});
+    sizes.replaceChildren(); (product.sizes || ["One size"]).forEach((value,i)=>{const selected=selectedSize ? value===selectedSize : i===0;const b=document.createElement("button");b.type="button";b.className="variant-chip size-chip"+(selected?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(selected));b.addEventListener("click",()=>{sizes.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");});sizes.append(b);});
     qty.value="1"; overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.classList.add("checkout-open");
   }
   function closeProductDetail(){const o=document.getElementById("product-detail-overlay");o.classList.remove("open");o.setAttribute("aria-hidden","true");document.body.classList.remove("checkout-open");}
@@ -91,7 +91,7 @@
     const favorite = document.createElement("button"); favorite.type = "button"; favorite.className = "favorite-button"; favorite.setAttribute("aria-label", "Toggle favorite"); favorite.textContent = favorites.includes(product.id) ? "♥" : "♡";
     favorite.addEventListener("click", () => { favorites = favorites.includes(product.id) ? favorites.filter(id => id !== product.id) : [...favorites, product.id]; save("gf-favorites", favorites); renderCatalog(); updateCounts(); });
     const add = document.createElement("button"); add.type = "button"; add.className = "order"; add.textContent = t("add") + " +";
-    add.addEventListener("click", () => openProductDetail(product));
+    add.addEventListener("click", () => openProductDetail(product, colour.value, size.value));
     actions.append(favorite, add);
     info.append(meta, title, price, desc, options, actions); card.append(photo, info); target.append(card);
   }
@@ -163,7 +163,10 @@
     document.getElementById("search-input").placeholder = t("search");
     renderCatalog(); updateCounts();
   }
-  document.getElementById("detail-close").addEventListener("click", closeProductDetail);\n  document.getElementById("detail-add").addEventListener("click", addDetailToCart);\n  document.getElementById("product-detail-overlay").addEventListener("click",e=>{if(e.target.id==="product-detail-overlay")closeProductDetail();});\n  document.getElementById("checkout-close").addEventListener("click", closeCheckout);
+  document.getElementById("detail-close").addEventListener("click", closeProductDetail);
+  document.getElementById("detail-add").addEventListener("click", addDetailToCart);
+  document.getElementById("product-detail-overlay").addEventListener("click",e=>{if(e.target.id==="product-detail-overlay")closeProductDetail();});
+  document.getElementById("checkout-close").addEventListener("click", closeCheckout);
   document.getElementById("checkout-overlay").addEventListener("click", e => { if (e.target.id === "checkout-overlay") closeCheckout(); });
   document.getElementById("cart-open").addEventListener("click", openCart);
   document.getElementById("cart-close").addEventListener("click", closeCart);
@@ -180,7 +183,8 @@
     const localOrders = load("gf-orders", []); localOrders.push({id:orderId,status:"New — awaiting confirmation",createdAt:new Date().toISOString(),items, total, country:form.get("country")}); save("gf-orders",localOrders);
     const number = String(config.whatsappNumber || "").replace(/\D/g,"");
     if (!number) { notify("WhatsApp is not configured. Contact us on WeChat: "+(config.wechatId||"AHMEDLEBOSS")); return; }
-    window.open("https://wa.me/"+number+"?text="+encodeURIComponent(details.join("\n")),"_blank","noopener");
+    window.open("https://wa.me/"+number+"?text="+encodeURIComponent(details.join("
+")),"_blank","noopener");
     cart.clear(); save("gf-cart",[]); updateCounts(); closeCheckout(); event.currentTarget.reset(); document.getElementById("tracking-number").value = orderId; document.getElementById("tracking-result").textContent = "Order reference: "+orderId+" — New, awaiting confirmation (saved only in this browser).";
   });
   document.getElementById("show-favorites").addEventListener("click", () => { showOnlyFavorites = !showOnlyFavorites; document.getElementById("show-favorites").textContent = showOnlyFavorites ? "SHOW ALL PRODUCTS" : "♡ Favorites " + favorites.length; renderCatalog(); document.getElementById("catalogue").scrollIntoView({behavior:"smooth"}); });
