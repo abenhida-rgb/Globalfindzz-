@@ -32,11 +32,11 @@ window.STORE_PRODUCTS = [
   {
     id: "sunglasses",
     category: "ACCESSORIES",
-    name: "Everyday Sunglasses",
-    price: null,
-    description: "A selection of everyday frames. Ask for current styles and photos.",
-    image: "",
-    colours: ["Black", "Brown", "Silver", "Gold"],
+    name: "Vintage Metal Frame Sunglasses",
+    price: 10,
+    description: "Unisex vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
+    image: "https://nuef.tokyo/cdn/shop/files/241028_NUEF-TOKYO0580.jpg?v=1759914204&width=1500",
+    colours: ["Gold frame / dark lenses", "Silver frame / dark lenses", "Black frame", "Brown lenses"],
     sizes: ["One size"]
   },
   {
