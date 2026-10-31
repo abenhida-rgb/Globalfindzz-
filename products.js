@@ -72,10 +72,10 @@ window.STORE_PRODUCTS = [
   ,{
     id: "goyard-style-belt",
     category: "ACCESSORIES",
-    name: "Goyard-Style Pattern Belt",
+    name: "Goyard-Style Sénat Pocket Pouch",
     price: 14.99,
-    
-    image: "https://kinship.jp/cdn/shop/files/UntitledProject_2_0e5a0523-5444-4e58-b935-c29c32672f3c.png?v=1774946796&width=1445",description: "Men's patterned canvas belt with a classic geometric monogram-inspired look. Available in black, green and yellow. Unbranded listing; not represented as an authentic Goyard product. Confirm material, buckle and sizing before ordering. Shipping is calculated separately.",
+    description: "Unbranded rectangular zip pouch inspired by the Sénat-style pocket shape, with a geometric chevron pattern. Available in black, green and yellow. Not an authentic Goyard product. Confirm exact material, colour and sizing before ordering. Shipping is calculated separately.",
+    image: "https://www.fashionphile.com/cdn/shop/files/c987a42d35e7c4f866e12fed05c7b6d3.jpg?v=1750972457&width=1946",
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
   }
