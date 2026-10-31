@@ -74,7 +74,8 @@ window.STORE_PRODUCTS = [
     category: "ACCESSORIES",
     name: "Goyard-Style Pattern Belt",
     price: 14.99,
-    description: "Men's patterned canvas belt with a classic geometric monogram-inspired look. Available in black, green and yellow. Unbranded listing; not represented as an authentic Goyard product. Confirm material, buckle and sizing before ordering. Shipping is calculated separately.",
+    
+    image: "https://kinship.jp/cdn/shop/files/UntitledProject_2_0e5a0523-5444-4e58-b935-c29c32672f3c.png?v=1774946796&width=1445",description: "Men's patterned canvas belt with a classic geometric monogram-inspired look. Available in black, green and yellow. Unbranded listing; not represented as an authentic Goyard product. Confirm material, buckle and sizing before ordering. Shipping is calculated separately.",
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
   }
