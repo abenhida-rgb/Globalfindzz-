@@ -50,7 +50,38 @@
     const desc = document.createElement("p"); desc.className = "description"; desc.textContent = product.description || "";
     const options = document.createElement("div"); options.className = "options";
     const colour = createSelect("Choose colour", product.colours || ["One colour"], "Colour");
-    const size = createSelect("Choose size", product.sizes || ["One size"], "Size"); options.append(colour, size);
+    const size = createSelect("Choose size", product.sizes || ["One size"], "Size");
+    const colourFilters = {
+      black: "grayscale(1) brightness(.42) contrast(1.18)",
+      "dark grey": "grayscale(1) brightness(.62) contrast(1.08)",
+      grey: "grayscale(1) brightness(.9)",
+      silver: "grayscale(1) brightness(1.25) contrast(.9)",
+      white: "grayscale(1) brightness(1.55) contrast(.72)",
+      navy: "hue-rotate(205deg) saturate(1.25) brightness(.72)",
+      blue: "hue-rotate(190deg) saturate(1.35)",
+      brown: "sepia(.72) saturate(.9) brightness(.78)",
+      beige: "sepia(.42) saturate(.62) brightness(1.16)",
+      khaki: "sepia(.58) saturate(.8) brightness(.92)",
+      green: "hue-rotate(75deg) saturate(1.25) brightness(.88)",
+      yellow: "hue-rotate(25deg) saturate(1.7) brightness(1.08)",
+      gold: "sepia(.85) saturate(1.7) hue-rotate(5deg) brightness(1.08)",
+      steel: "grayscale(.8) brightness(1.12) contrast(1.08)",
+      "black knight": "grayscale(1) brightness(.38) contrast(1.25)",
+      "dark lenses": "brightness(.72) contrast(1.15)",
+      "brown lenses": "sepia(.55) saturate(1.2) brightness(.92)",
+      "mixed": "saturate(1.15)",
+      "gold frame / dark lenses": "sepia(.7) saturate(1.3) brightness(1.05)",
+      "silver frame / dark lenses": "grayscale(.75) brightness(1.08)",
+      "black frame": "grayscale(1) brightness(.65) contrast(1.15)"
+    };
+    colour.addEventListener("change", () => {
+      const img = photo.querySelector("img");
+      if (!img) return;
+      const selected = colour.value.trim().toLowerCase();
+      img.style.filter = colourFilters[selected] || "none";
+      img.style.transition = "filter .25s ease";
+    });
+    options.append(colour, size);
     const actions = document.createElement("div"); actions.className = "product-actions";
     const favorite = document.createElement("button"); favorite.type = "button"; favorite.className = "favorite-button"; favorite.setAttribute("aria-label", "Toggle favorite"); favorite.textContent = favorites.includes(product.id) ? "♥" : "♡";
     favorite.addEventListener("click", () => { favorites = favorites.includes(product.id) ? favorites.filter(id => id !== product.id) : [...favorites, product.id]; save("gf-favorites", favorites); renderCatalog(); updateCounts(); });
