@@ -50,15 +50,20 @@
     const photo = document.createElement("div");
     photo.className = "product-photo";
     const image = document.createElement("img");
-    image.src = product.image;
     image.alt = product.name;
     image.loading = "lazy";
     image.onerror = () => {
       image.remove();
       photo.classList.add("image-fallback");
-      photo.textContent = "GLOBALFINDZZ";
+      photo.textContent = product.name;
     };
-    photo.append(image);
+    if (product.image) {
+      image.src = product.image;
+      photo.append(image);
+    } else {
+      photo.classList.add("image-fallback");
+      photo.textContent = product.name;
+    }
 
     const info = document.createElement("div");
     info.className = "product-info";
