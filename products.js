@@ -129,17 +129,15 @@ window.STORE_PRODUCTS = [
   ,{
     id: "victoire-style-wallet",
     category: "ACCESSORIES",
-    name: "Victoire-Style Bifold Wallet",
+    name: "Goyard Victoire Green Wallet",
     price: 14.99,
-    description: "Compact bi-fold wallet with an abstract geometric canvas pattern, card slots and space for notes. Unbranded style-inspired design; not an authentic Goyard product. Product artwork is an illustrative mock-up; confirm the exact supplier item, material and colour before ordering. Shipping is calculated separately.",
-    image: gfWalletArt("#244b37", "#d8d0ae"),
-    gallery: [gfWalletArt("#244b37", "#d8d0ae", true)],
-    variantImages: {
-      "Black": gfWalletArt("#242424", "#c8c1ad"),
-      "Green": gfWalletArt("#244b37", "#d8d0ae"),
-      "Yellow": gfWalletArt("#c5a43b", "#f0e4bf")
-    },
-    colours: ["Black", "Green", "Yellow"],
+    description: "Green Goyard Victoire bifold wallet reference. Image source: Crepslocker product listing. GlobalFindzz is independent and is not affiliated with or endorsed by Goyard or Crepslocker. Confirm the exact supplier item and authenticity before ordering. Shipping is calculated separately.",
+    image: "https://www.crepslocker.com/cdn/shop/files/goyard-victoire-green-wallet-victo8pmlty09cl09x-front_ff46c30c-f41c-45b9-945f-5e3a94223462.webp?v=1759568728",
+    gallery: [
+      "https://www.crepslocker.com/cdn/shop/files/goyard-victoire-green-wallet-victo8pmlty09cl09x-back_6d5f163b-0150-469f-8809-7c2c3367983f.webp?v=1759568728",
+      "https://www.crepslocker.com/cdn/shop/files/goyard-victoire-green-wallet-victo8pmlty09cl09x-detailed_79506a91-534e-4814-a7a4-9fc0c21e6f3f.webp?v=1759568728"
+    ],
+    colours: ["Green"],
     sizes: ["One size"]
   }
 ];
