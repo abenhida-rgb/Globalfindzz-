@@ -4,7 +4,7 @@
   const grid = document.getElementById("product-grid");
   const offersGrid = document.getElementById("offers-grid");
   const toast = document.getElementById("toast");
-  const cart = new Map();
+  const cart = new Map(load("gf-cart", []).map(item => [item.key, item]));
   let favorites = load("gf-favorites", []);
   let showOnlyFavorites = false;
   let toastTimer;
@@ -26,6 +26,40 @@
     try { return new Intl.NumberFormat(language === "fr" ? "fr-FR" : "en-US", { style:"currency", currency, maximumFractionDigits: currency === "MAD" ? 0 : 2 }).format(converted); }
     catch (_) { return symbols[currency] + converted.toFixed(2); }
   }
+  let detailProduct = null;
+  function openProductDetail(product) {
+    detailProduct = product;
+    const overlay = document.getElementById("product-detail-overlay");
+    const gallery = document.getElementById("detail-gallery");
+    const name = document.getElementById("detail-name");
+    const price = document.getElementById("detail-price");
+    const desc = document.getElementById("detail-description");
+    const colours = document.getElementById("detail-colours");
+    const sizes = document.getElementById("detail-sizes");
+    const qty = document.getElementById("detail-qty");
+    const images = [...new Set([product.image, ...(product.gallery || [])].filter(Boolean))];
+    gallery.replaceChildren();
+    const main = document.createElement("img"); main.className="detail-main-image"; main.alt=product.name; main.src=images[0] || ""; gallery.append(main);
+    if (images.length > 1) {
+      const thumbs=document.createElement("div"); thumbs.className="detail-thumbnails";
+      images.forEach((src,i)=>{const b=document.createElement("button");b.type="button";b.className="detail-thumb"+(i===0?" active":"");const im=document.createElement("img");im.src=src;im.alt=product.name+" view "+(i+1);b.append(im);b.addEventListener("click",()=>{main.src=src;thumbs.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");});thumbs.append(b);}); gallery.append(thumbs);
+    }
+    name.textContent=product.name; price.textContent=money(product.salePrice ?? product.price); desc.textContent=product.description || "";
+    colours.replaceChildren(); const colourValues=product.colours || ["One colour"];
+    colourValues.forEach((value,i)=>{const b=document.createElement("button");b.type="button";b.className="variant-chip"+(i===0?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{colours.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");const variantImage=product.variantImages && (product.variantImages[value] || product.variantImages[value.toLowerCase()]);if(variantImage)main.src=variantImage;});colours.append(b);});
+    sizes.replaceChildren(); (product.sizes || ["One size"]).forEach((value,i)=>{const b=document.createElement("button");b.type="button";b.className="variant-chip size-chip"+(i===0?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(i===0));b.addEventListener("click",()=>{sizes.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");});sizes.append(b);});
+    qty.value="1"; overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.classList.add("checkout-open");
+  }
+  function closeProductDetail(){const o=document.getElementById("product-detail-overlay");o.classList.remove("open");o.setAttribute("aria-hidden","true");document.body.classList.remove("checkout-open");}
+  function addDetailToCart(){
+    if(!detailProduct)return;
+    const colour=document.querySelector("#detail-colours .selected")?.textContent || "Not selected";
+    const size=document.querySelector("#detail-sizes .selected")?.textContent || "Not selected";
+    const qty=Math.max(1,Math.min(20,Number(document.getElementById("detail-qty").value)||1));
+    const key=detailProduct.id+"|"+colour+"|"+size;const old=cart.get(key);
+    cart.set(key,{key,id:detailProduct.id,name:detailProduct.name,price:detailProduct.salePrice ?? detailProduct.price,colour,size,qty:(old?.qty||0)+qty,image:detailProduct.image});
+    save("gf-cart",[...cart.values()]);updateCounts();closeProductDetail();notify(t("added"));
+  }
   function createSelect(label, values, placeholder) {
     const select = document.createElement("select"); select.setAttribute("aria-label", label);
     if (placeholder) select.add(new Option(placeholder, ""));
@@ -35,7 +69,7 @@
   function renderProduct(product, index, target) {
     const card = document.createElement("article"); card.className = "product-card";
     const photo = document.createElement("div"); photo.className = "product-photo";
-    if (product.image) { const img = document.createElement("img"); img.alt = product.name; img.loading = "lazy"; img.src = product.image; img.onerror = () => { img.remove(); photo.classList.add("image-fallback"); photo.textContent = product.name; }; photo.append(img); }
+    if (product.image) { const img = document.createElement("img"); img.alt = product.name; img.loading = "lazy"; img.src = product.image; img.onerror = () => { img.remove(); photo.classList.add("image-fallback"); photo.textContent = product.name; }; photo.append(img); photo.tabIndex=0; photo.setAttribute("role","button"); photo.setAttribute("aria-label","View "+product.name); photo.addEventListener("click",()=>openProductDetail(product)); photo.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProductDetail(product);}}); }
     else { photo.classList.add("image-fallback"); photo.textContent = product.name; }
     const info = document.createElement("div"); info.className = "product-info";
     const meta = document.createElement("div"); meta.className = "product-meta";
@@ -51,47 +85,13 @@
     const options = document.createElement("div"); options.className = "options";
     const colour = createSelect("Choose colour", product.colours || ["One colour"], "Colour");
     const size = createSelect("Choose size", product.sizes || ["One size"], "Size");
-    const colourFilters = {
-      black: "grayscale(1) brightness(.42) contrast(1.18)",
-      "dark grey": "grayscale(1) brightness(.62) contrast(1.08)",
-      grey: "grayscale(1) brightness(.9)",
-      silver: "grayscale(1) brightness(1.25) contrast(.9)",
-      white: "grayscale(1) brightness(1.55) contrast(.72)",
-      navy: "hue-rotate(205deg) saturate(1.25) brightness(.72)",
-      blue: "hue-rotate(190deg) saturate(1.35)",
-      brown: "sepia(.72) saturate(.9) brightness(.78)",
-      beige: "sepia(.42) saturate(.62) brightness(1.16)",
-      khaki: "sepia(.58) saturate(.8) brightness(.92)",
-      green: "hue-rotate(75deg) saturate(1.25) brightness(.88)",
-      yellow: "hue-rotate(25deg) saturate(1.7) brightness(1.08)",
-      gold: "sepia(.85) saturate(1.7) hue-rotate(5deg) brightness(1.08)",
-      steel: "grayscale(.8) brightness(1.12) contrast(1.08)",
-      "black knight": "grayscale(1) brightness(.38) contrast(1.25)",
-      "dark lenses": "brightness(.72) contrast(1.15)",
-      "brown lenses": "sepia(.55) saturate(1.2) brightness(.92)",
-      "mixed": "saturate(1.15)",
-      "gold frame / dark lenses": "sepia(.7) saturate(1.3) brightness(1.05)",
-      "silver frame / dark lenses": "grayscale(.75) brightness(1.08)",
-      "black frame": "grayscale(1) brightness(.65) contrast(1.15)"
-    };
-    function updateColourPreview() {
-      const img = photo.querySelector("img");
-      if (!img) return;
-      const selected = colour.value.trim().toLowerCase().replace(/\\s+/g, " ");
-      img.style.transition = "filter .3s ease";
-      img.style.filter = selected ? (colourFilters[selected] || "none") : "none";
-      img.dataset.selectedColour = selected;
-      photo.dataset.selectedColour = selected;
-    }
-    colour.addEventListener("change", updateColourPreview);
-    colour.addEventListener("input", updateColourPreview);
-    if (colour.value) updateColourPreview();
+    colour.addEventListener("change", () => { colour.dataset.chosen = colour.value; });
     options.append(colour, size);
     const actions = document.createElement("div"); actions.className = "product-actions";
     const favorite = document.createElement("button"); favorite.type = "button"; favorite.className = "favorite-button"; favorite.setAttribute("aria-label", "Toggle favorite"); favorite.textContent = favorites.includes(product.id) ? "♥" : "♡";
     favorite.addEventListener("click", () => { favorites = favorites.includes(product.id) ? favorites.filter(id => id !== product.id) : [...favorites, product.id]; save("gf-favorites", favorites); renderCatalog(); updateCounts(); });
     const add = document.createElement("button"); add.type = "button"; add.className = "order"; add.textContent = t("add") + " +";
-    add.addEventListener("click", () => { const key = product.id + "|" + colour.value + "|" + size.value; const existing = cart.get(key); cart.set(key, { key, id:product.id, name:product.name, price:product.salePrice ?? product.price, colour:colour.value || "Not selected", size:size.value || "Not selected", qty:(existing?.qty || 0) + 1 }); updateCounts(); notify(t("added")); });
+    add.addEventListener("click", () => openProductDetail(product));
     actions.append(favorite, add);
     info.append(meta, title, price, desc, options, actions); card.append(photo, info); target.append(card);
   }
@@ -115,7 +115,7 @@
     document.getElementById("item-count").textContent = String(filtered.length).padStart(2, "0") + " PRODUCTS";
   }
   function updateCounts() {
-    document.getElementById("cart-count").textContent = [...cart.values()].reduce((n, item) => n + item.qty, 0);
+    save("gf-cart",[...cart.values()]); document.getElementById("cart-count").textContent = [...cart.values()].reduce((n, item) => n + item.qty, 0);
     document.getElementById("favorite-count").textContent = favorites.length;
   }
   function openCheckout(items) {
@@ -141,9 +141,9 @@
       const linePrice = document.createElement("span"); linePrice.textContent = money(item.price) + " × " + item.qty;
       info.append(name, meta, linePrice);
       const controls = document.createElement("div"); controls.className = "cart-controls";
-      const minus = document.createElement("button"); minus.type = "button"; minus.textContent = "−"; minus.setAttribute("aria-label", "Remove one"); minus.onclick = () => { if (item.qty <= 1) cart.delete(item.key); else item.qty--; updateCounts(); drawCart(); };
-      const plus = document.createElement("button"); plus.type = "button"; plus.textContent = "+"; plus.setAttribute("aria-label", "Add one"); plus.onclick = () => { item.qty++; updateCounts(); drawCart(); };
-      const remove = document.createElement("button"); remove.type = "button"; remove.textContent = "×"; remove.setAttribute("aria-label", "Remove item"); remove.onclick = () => { cart.delete(item.key); updateCounts(); drawCart(); };
+      const minus = document.createElement("button"); minus.type = "button"; minus.textContent = "−"; minus.setAttribute("aria-label", "Remove one"); minus.onclick = () => { if (item.qty <= 1) cart.delete(item.key); else item.qty--; save("gf-cart",[...cart.values()]); updateCounts(); drawCart(); };
+      const plus = document.createElement("button"); plus.type = "button"; plus.textContent = "+"; plus.setAttribute("aria-label", "Add one"); plus.onclick = () => { item.qty++; save("gf-cart",[...cart.values()]); updateCounts(); drawCart(); };
+      const remove = document.createElement("button"); remove.type = "button"; remove.textContent = "×"; remove.setAttribute("aria-label", "Remove item"); remove.onclick = () => { cart.delete(item.key); save("gf-cart",[...cart.values()]); updateCounts(); drawCart(); };
       controls.append(minus, plus, remove); row.append(info, controls); list.append(row);
     }
     document.getElementById("cart-total").textContent = money(total);
@@ -163,13 +163,13 @@
     document.getElementById("search-input").placeholder = t("search");
     renderCatalog(); updateCounts();
   }
-  document.getElementById("checkout-close").addEventListener("click", closeCheckout);
+  document.getElementById("detail-close").addEventListener("click", closeProductDetail);\n  document.getElementById("detail-add").addEventListener("click", addDetailToCart);\n  document.getElementById("product-detail-overlay").addEventListener("click",e=>{if(e.target.id==="product-detail-overlay")closeProductDetail();});\n  document.getElementById("checkout-close").addEventListener("click", closeCheckout);
   document.getElementById("checkout-overlay").addEventListener("click", e => { if (e.target.id === "checkout-overlay") closeCheckout(); });
   document.getElementById("cart-open").addEventListener("click", openCart);
   document.getElementById("cart-close").addEventListener("click", closeCart);
   document.getElementById("cart-overlay").addEventListener("click", e => { if (e.target.id === "cart-overlay") closeCart(); });
   document.getElementById("cart-checkout").addEventListener("click", () => { const items = [...cart.values()].map(x => ({...x})); closeCart(); if (items.length) openCheckout(items); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") { closeCheckout(); closeCart(); } });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") { closeCheckout(); closeCart(); closeProductDetail(); } });
   document.getElementById("checkout-form").addEventListener("submit", event => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -181,7 +181,7 @@
     const number = String(config.whatsappNumber || "").replace(/\D/g,"");
     if (!number) { notify("WhatsApp is not configured. Contact us on WeChat: "+(config.wechatId||"AHMEDLEBOSS")); return; }
     window.open("https://wa.me/"+number+"?text="+encodeURIComponent(details.join("\n")),"_blank","noopener");
-    cart.clear(); updateCounts(); closeCheckout(); event.currentTarget.reset(); document.getElementById("tracking-number").value = orderId; document.getElementById("tracking-result").textContent = "Order reference: "+orderId+" — New, awaiting confirmation (saved only in this browser).";
+    cart.clear(); save("gf-cart",[]); updateCounts(); closeCheckout(); event.currentTarget.reset(); document.getElementById("tracking-number").value = orderId; document.getElementById("tracking-result").textContent = "Order reference: "+orderId+" — New, awaiting confirmation (saved only in this browser).";
   });
   document.getElementById("show-favorites").addEventListener("click", () => { showOnlyFavorites = !showOnlyFavorites; document.getElementById("show-favorites").textContent = showOnlyFavorites ? "SHOW ALL PRODUCTS" : "♡ Favorites " + favorites.length; renderCatalog(); document.getElementById("catalogue").scrollIntoView({behavior:"smooth"}); });
   document.getElementById("language-select").addEventListener("change", e => { language=e.target.value; save("gf-language",language); applyLanguageCurrency(); });
