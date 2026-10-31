@@ -1,6 +1,6 @@
 window.STORE_CONFIG = {
   storeName: "GLOBALFINDZZ",
   currency: "USD",
-  whatsappNumber: "REPLACE_WITH_YOUR_WHATSAPP_NUMBER",
+  whatsappNumber: "+8613376445596",
   wechatId: "AHMEDLEBOSS"
 };
