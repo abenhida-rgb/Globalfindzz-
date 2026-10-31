@@ -24,8 +24,8 @@ window.STORE_PRODUCTS = [
     category: "FOOTWEAR",
     name: "BOKEN Closed-Toe Slip-On Slippers",
     price: null,
-    description: "Unisex for men and women. Comfortable closed-toe slip-on slippers with a thick sole and easy buckle detail. Autumn/winter casual wear. Please confirm material, anti-slip performance and available sizes with us.",
-    image: "https://g-images.voghion.com/productImages/776fbebb9fc94cef612b7857a1328630_voghion790x790.jpg",
+    description: "Men's style. Comfortable closed-toe slip-on slippers with a thick sole and easy buckle detail. Autumn/winter casual wear. Please confirm material, anti-slip performance and available sizes with us.",
+    image: "https://cafe24img.poxo.com/meetkmi0/web/product/big/202502/f5853dcfb0a31b9da2c51de68d8bf920.jpg",
     colours: ["Khaki", "Brown", "Black"],
     sizes: ["EU 36–37", "EU 38–39", "EU 40–41"]
   },
