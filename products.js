@@ -1,58 +1,10 @@
-// Edit this file to change your product catalog.
-// Prices are sample USD prices. Replace photos with your own licensed product images before selling.
 window.STORE_PRODUCTS = [
-  {
-    id: "linen-shirt",
-    name: "Relaxed Linen Shirt",
-    category: "Clothing",
-    price: 34,
-    tag: "BESTSELLER",
-    description: "An easy, breathable layer for everyday styling.",
-    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85"
-  },
-  {
-    id: "everyday-sneaker",
-    name: "Everyday Court Sneaker",
-    category: "Shoes",
-    price: 59,
-    tag: "NEW IN",
-    description: "A clean, versatile sneaker for off-duty days.",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
-  },
-  {
-    id: "crossbody-bag",
-    name: "Structured Crossbody Bag",
-    category: "Accessories",
-    price: 42,
-    tag: "STYLE PICK",
-    description: "A compact everyday bag with a polished finish.",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
-  },
-  {
-    id: "classic-jacket",
-    name: "Modern Utility Jacket",
-    category: "Clothing",
-    price: 68,
-    tag: "",
-    description: "A versatile outer layer with a relaxed silhouette.",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=85"
-  },
-  {
-    id: "minimal-watch",
-    name: "Minimal Everyday Watch",
-    category: "Accessories",
-    price: 49,
-    tag: "",
-    description: "A simple finishing touch for day-to-night looks.",
-    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85"
-  },
-  {
-    id: "leather-loafer",
-    name: "Classic City Loafer",
-    category: "Shoes",
-    price: 64,
-    tag: "",
-    description: "A smart-casual staple for work and weekends.",
-    image: "https://images.unsplash.com/photo-1531310197839-ccf54634509e?auto=format&fit=crop&w=900&q=85"
-  }
+{id:"tech-fleece-set",name:"Tech Fleece Tracksuit Set",category:"Clothing",price:29,tag:"POPULAR",description:"Matching zip jacket and tapered pants. Ask for colours and sizes.",image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85",colours:["Black","Grey","Dark Grey","Navy","Blue","Brown","Green","Beige"],sizes:["XS","S","M","L","XL","XXL","XXXL"]},
+{id:"monogram-set",name:"Monogram Tracksuit Set",category:"Clothing",price:32,tag:"STYLE PICK",description:"A coordinated monogram-look set for everyday styling.",image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85",colours:["Black","Navy","Grey","White","Beige","Brown","Green","Blue"],sizes:["XS","S","M","L","XL","XXL","XXXL"]},
+{id:"street-hoodie",name:"Essential Street Hoodie",category:"Clothing",price:24,tag:"EVERYDAY",description:"An easy layer for relaxed everyday outfits.",image:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85",colours:["Black","Grey","White","Cream"],sizes:["S","M","L","XL","XXL"]},
+{id:"everyday-sneaker",name:"Everyday Sneakers",category:"Shoes",price:39,tag:"NEW IN",description:"A versatile sneaker for daily wear.",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",colours:["White","Black","Red"],sizes:["39","40","41","42","43","44","45"]},
+{id:"classic-clogs",name:"Classic Clogs",category:"Shoes",price:18,tag:"COMFORT PICK",description:"Lightweight casual clogs for laid-back days.",image:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85",colours:["Black","White","Navy","Pink"],sizes:["36","37","38","39","40","41","42","43","44"]},
+{id:"sport-sunglasses",name:"Sport Sunglasses",category:"Accessories",price:15,tag:"ACCESSORY",description:"A sporty finishing touch for sunny days.",image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",colours:["Black","Brown","Silver"],sizes:["One size"]},
+{id:"crossbody-bag",name:"Everyday Crossbody Bag",category:"Accessories",price:22,tag:"DAILY CARRY",description:"A compact bag for your everyday essentials.",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85",colours:["Black","Brown","Beige"],sizes:["One size"]},
+{id:"minimal-watch",name:"Minimal Watch",category:"Accessories",price:26,tag:"FINISHING TOUCH",description:"A clean, simple accessory for day-to-night looks.",image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85",colours:["Black","Silver","Gold"],sizes:["One size"]}
 ];
