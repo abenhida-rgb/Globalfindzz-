@@ -76,7 +76,7 @@ window.STORE_PRODUCTS = [
     name: "Goyard-Style Sénat Pocket Pouch",
     price: 14.99,
     description: "Unbranded rectangular zip pouch inspired by the Sénat-style pocket shape, with a geometric chevron pattern. Available in black, green and yellow. Not an authentic Goyard product. Confirm exact material, colour and sizing before ordering. Shipping is calculated separately.",
-    image: "https://bananarepublic.gap.com/webcontent/0014/890/346/cn14890346.jpg",
+    image: "https://cdn.shopify.com/s/files/1/0590/9204/1917/files/PochetteUomoFantasiaGeometricaconLaccettodaPolso_ab0c5dd1-a27a-41d0-a55f-6956ec30f42b.png?format=webp&v=1765622921&width=1920",
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
   }
