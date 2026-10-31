@@ -39,20 +39,22 @@ window.STORE_PRODUCTS = [
   },
   {
     id: "sunglasses",
-    category: "ACCid: "victoire-style-wallet",
     category: "ACCESSORIES",
-    name: "Victoire-Style Bifold Wallet",
-    price: 14.99,
-    description: "Compact bi-fold wallet with an abstract geometric canvas pattern, card slots and space for notes. Unbranded style-inspired design; not an authentic Goyard product. Product artwork is an illustrative mock-up; confirm the exact supplier item, material and colour before ordering. Shipping is calculated separately.",
-    image: gfWalletArt("#244b37", "#d8d0ae"),
-    gallery: [gfWalletArt("#244b37", "#d8d0ae", true)],
-    variantImages: {
-      "Black": gfWalletArt("#242424", "#c8c1ad"),
-      "Green": gfWalletArt("#244b37", "#d8d0ae"),
-      "Yellow": gfWalletArt("#c5a43b", "#f0e4bf")
-    },
-    colours: ["Black", "Green", "Yellow"],
-    sizes: ["One size"]   colours: ["Dark Grey"],
+    name: "Vintage Metal Frame Sunglasses",
+    price: 10,
+    description: "Men's vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
+    image: "https://www.retrospectacle.co.uk/cdn/shop/files/Dunhill6161Men_sSunglasses.png?v=1778062126&width=800",
+    colours: ["Gold frame / dark lenses", "Silver frame / dark lenses", "Black frame", "Brown lenses"],
+    sizes: ["One size"]
+  },
+  {
+    id: "y2k-patchwork-hoodie",
+    category: "CLOTHING",
+    name: "Men's Y2K Contrast Patchwork Hooded Sweatshirt",
+    price: 17,
+    description: "Men's short-length Y2K-inspired contrast patchwork hooded sweatshirt with long sleeves and an oversized fit. Dark grey, 100% polyester. Check measurements before ordering.",
+    image: "https://img.ltwebstatic.com/v4/j/pi/2025/10/21/c1/1761010339ff09c9df4ebe55bc734b6a2d885fb119_thumbnail_900x.webp",
+    colours: ["Dark Grey"],
     sizes: ["S", "M", "L", "XL"]
   },
   {
@@ -77,16 +79,17 @@ window.STORE_PRODUCTS = [
     sizes: ["One size"]
   }
   ,{
-    id: "goyard-style-belt",
+    id: "victoire-style-wallet",
     category: "ACCESSORIES",
-    name: "Goyard-Style Wallet",
+    name: "Victoire-Style Bifold Wallet",
     price: 14.99,
-    description: "Compact card wallet with a geometric chevron pattern. Available in black, green and yellow. Unbranded, style-inspired design; not represented as an authentic Goyard product. Shipping is calculated separately.",
-    image: "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-black-front-view.jpg?v=1771333796&width=1200",
+    description: "Compact bi-fold wallet with an abstract geometric canvas pattern, card slots and space for notes. Unbranded style-inspired design; not an authentic Goyard product. Product artwork is an illustrative mock-up; confirm the exact supplier item, material and colour before ordering. Shipping is calculated separately.",
+    image: gfWalletArt("#244b37", "#d8d0ae"),
+    gallery: [gfWalletArt("#244b37", "#d8d0ae", true)],
     variantImages: {
-      "Black": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-black-front-view.jpg?v=1771333796&width=1200",
-      "Green": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-green-front-view.jpg?v=1771333796&width=1200",
-      "Yellow": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-yellow-front-view.jpg?v=1771327312&width=1200"
+      "Black": gfWalletArt("#242424", "#c8c1ad"),
+      "Green": gfWalletArt("#244b37", "#d8d0ae"),
+      "Yellow": gfWalletArt("#c5a43b", "#f0e4bf")
     },
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
