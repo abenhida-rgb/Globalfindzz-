@@ -23,7 +23,7 @@ window.STORE_PRODUCTS = [
     id: "boken-slippers",
     category: "FOOTWEAR",
     name: "BOKEN Closed-Toe Slip-On Slippers",
-    price: 8,
+    price: 10,
     description: "Men's style. Comfortable closed-toe slip-on slippers with a thick sole and easy buckle detail. Autumn/winter casual wear. Please confirm material, anti-slip performance and available sizes with us.",
     image: "https://ericcomfortshoes.com/cdn/shop/collections/Adobe_Express_-_file_3.jpg?v=1762616297",
     colours: ["Khaki", "Brown", "Black"],
