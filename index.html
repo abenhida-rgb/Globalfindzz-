@@ -14,27 +14,34 @@
 <body>
   <header class="header">
     <a class="logo" href="#" aria-label="GlobalFindzz home"><span class="logo-mark">G</span><span class="logo-type">GLOBALFINDZZ<small>SELECTED STREETWEAR</small></span></a>
-    <nav class="nav"><a href="#catalogue">Catalogue</a><a href="#contact">Contact</a><a class="whatsapp-nav" href="https://wa.me/8613376445596?text=Hello%20GlobalFindzz" target="_blank" rel="noopener">WhatsApp · +86 133 7644 5596 ↗</a></nav>
+    <nav class="nav"><a href="#catalogue" data-i18n="catalogue">Catalogue</a><a href="#tracking" data-i18n="tracking">Track order</a><a href="#contact" data-i18n="contact">Contact</a><a class="whatsapp-nav" href="https://wa.me/8613376445596?text=Hello%20GlobalFindzz" target="_blank" rel="noopener">WhatsApp ↗</a></nav>
   </header>
 
   <main>
     <section class="intro">
       <p class="eyebrow">A SMALL, SELECTED COLLECTION</p>
       <h1>Find your<br><span>everyday fit.</span></h1>
-      <p class="intro-copy">Explore our selected collection. Choose your style, colour and size, then order directly through WhatsApp.</p>
-      <a class="intro-link" href="#catalogue">VIEW THE COLLECTION <span>↓</span></a>
+      <p class="intro-copy" data-i18n="intro">Explore our selected collection. Choose your style, colour and size, then order directly through WhatsApp.</p>
+      <div class="hero-actions"><a class="intro-link" href="#catalogue" data-i18n="viewCollection">VIEW THE COLLECTION ↓</a><button class="cart-open" id="cart-open" type="button">BAG <span id="cart-count">0</span></button></div>
+      <div class="preferences"><label><span data-i18n="language">Language</span> <select id="language-select" aria-label="Language"><option value="en">English</option><option value="fr">Français</option></select></label><label><span data-i18n="currency">Currency</span> <select id="currency-select" aria-label="Currency"><option value="USD">USD $</option><option value="EUR">EUR €</option><option value="MAD">MAD د.م.</option></select></label></div>
     </section>
 
     <section class="catalogue" id="catalogue">
       <div class="section-head">
         <div><p class="eyebrow">GLOBALFINDZZ / 001</p><h2>The catalogue</h2></div>
-        <p class="item-count">06 PRODUCTS</p>
+        <p class="item-count" id="item-count">06 PRODUCTS</p>
       </div>
-      <div class="product-grid" id="product-grid"></div>
-      <p class="small-note">Product photos are visual references. Please contact us to confirm the exact item, available colours, sizes and delivery before ordering.</p>
+      <div class="catalogue-tools"><input id="search-input" type="search" placeholder="Search products…" aria-label="Search products"><select id="category-filter" aria-label="Filter category"><option value="">All categories</option></select><label>Max price <input id="price-filter" type="number" min="0" placeholder="Any" aria-label="Maximum price"></label><select id="size-filter" aria-label="Filter size"><option value="">Any size</option></select><select id="colour-filter" aria-label="Filter colour"><option value="">Any colour</option></select></div>
+      <div class="catalogue-subhead"><h3 data-i18n="offers">Offers</h3><span id="offer-note">Only verified sale prices are shown.</span></div><div class="product-grid" id="offers-grid"></div>
+      <div class="catalogue-subhead"><h3 data-i18n="allProducts">All products</h3><button class="text-button" id="show-favorites" type="button">♡ Favorites <span id="favorite-count">0</span></button></div><div class="product-grid" id="product-grid"></div>
+      <p class="small-note">Photos are references. Confirm authenticity, exact item, available colours/sizes, stock and shipping before paying. Displayed prices are product prices only unless explicitly stated.</p>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="tracking" id="tracking"><div><p class="eyebrow">GLOBALFINDZZ / ORDER STATUS</p><h2 data-i18n="trackTitle">Track your order</h2><p class="contact-copy" data-i18n="trackHint">Enter the order number you received. Until live order management is connected, this page can only show orders saved in this browser.</p></div><form id="tracking-form" class="tracking-form"><label for="tracking-number">Order number</label><div class="tracking-row"><input id="tracking-number" placeholder="GF-XXXXXXXX" required><button type="submit">CHECK STATUS</button></div><p id="tracking-result" role="status"></p></form></section>
+
+  <section class="reviews" id="reviews"><div class="section-head"><div><p class="eyebrow">CUSTOMER FEEDBACK</p><h2 data-i18n="reviewsTitle">Customer reviews</h2></div><p class="item-count">NO FAKE REVIEWS</p></div><p class="small-note">Reviews submitted here are stored only in this browser until a shared review service is connected. We do not mark reviews as verified purchases automatically.</p><form id="review-form" class="review-form"><input id="review-name" placeholder="Your name" maxlength="60" required><select id="review-product" required aria-label="Product for review"></select><select id="review-rating" aria-label="Rating"><option value="5">★★★★★ — 5</option><option value="4">★★★★ — 4</option><option value="3">★★★ — 3</option><option value="2">★★ — 2</option><option value="1">★ — 1</option></select><textarea id="review-text" placeholder="Share your experience after receiving your order…" maxlength="500" required></textarea><label class="upload-label">Photo (optional) <input id="review-photo" type="file" accept="image/*"></label><button type="submit" class="checkout-submit">SUBMIT REVIEW</button></form><div id="review-list" class="review-list"></div></section>
+
+  <section class="contact" id="contact">
       <div><p class="eyebrow">QUESTIONS OR ORDERS</p><h2>Let's talk.</h2><p class="contact-copy">Tell us which style you like and we'll help confirm the details.</p></div>
       <div class="contact-options">
         <a id="whatsapp-contact" href="https://wa.me/8613376445596" target="_blank" rel="noopener">WHATSAPP · +86 133 7644 5596 <span>↗</span></a>
@@ -49,14 +56,12 @@
       <button class="checkout-close" id="checkout-close" type="button" aria-label="Close checkout">×</button>
       <p class="eyebrow">GLOBALFINDZZ / WORLDWIDE DELIVERY</p>
       <h2 id="checkout-title">Delivery details</h2>
-      <p class="checkout-hint">Shipping cost is confirmed after we check your destination and parcel. No online payment is taken here.</p>
+      <p class="checkout-hint">Shipping cost and availability are confirmed manually before payment. No online payment is taken here.</p>
       <form id="checkout-form">
-        <input type="hidden" id="checkout-product">
-        <input type="hidden" id="checkout-colour">
-        <input type="hidden" id="checkout-size">
+        <input type="hidden" id="checkout-items">
         <div class="checkout-field"><label for="customer-name">Full name *</label><input id="customer-name" name="name" autocomplete="name" required maxlength="100" placeholder="Your full name"></div>
         <div class="checkout-field"><label for="customer-phone">WhatsApp / phone *</label><input id="customer-phone" name="phone" autocomplete="tel" required maxlength="40" placeholder="+ country code"></div>
-        <div class="checkout-field"><label for="customer-country">Country / region *</label><input id="customer-country" name="country" autocomplete="country-name" required maxlength="80" placeholder="Country where we deliver"></div>
+        <div class="checkout-field"><label for="customer-country">Country / region *</label><select id="customer-country" name="country" autocomplete="country-name" required><option value="">Choose destination</option><option value="Morocco">Morocco</option><option value="France">France</option><option value="Belgium">Belgium</option><option value="Other">Other country (confirm first)</option></select></div>
         <div class="checkout-two">
           <div class="checkout-field"><label for="customer-city">City *</label><input id="customer-city" name="city" autocomplete="address-level2" required maxlength="80"></div>
           <div class="checkout-field"><label for="customer-postcode">Postal code</label><input id="customer-postcode" name="postcode" autocomplete="postal-code" maxlength="24"></div>
@@ -68,6 +73,8 @@
       </form>
     </section>
   </div>
+
+  <div class="checkout-overlay" id="cart-overlay" aria-hidden="true"><section class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title"><button class="checkout-close" id="cart-close" type="button" aria-label="Close bag">×</button><p class="eyebrow">GLOBALFINDZZ / YOUR BAG</p><h2 id="cart-title">Shopping bag</h2><div id="cart-lines"></div><div class="cart-total-row"><span>Product subtotal</span><strong id="cart-total">$0</strong></div><p class="small-note">International shipping and any applicable taxes are confirmed separately before payment.</p><button id="cart-checkout" type="button">PROCEED TO DELIVERY DETAILS</button></section></div>
 
   <footer><span>© <span id="year"></span> GLOBALFINDZZ</span><span>SELECTED STREETWEAR</span><a href="#">BACK TO TOP ↑</a></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
