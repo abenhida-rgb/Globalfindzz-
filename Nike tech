@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Fleece Tracksuit | GlobalFindzz</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 30px 15px;
+}
+.product {
+  max-width: 430px;
+  margin: auto;
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+}
+.product h1 { font-size: 25px; }
+.price {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+select, button {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+button {
+  background: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+.note { color: #666; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="product">
+  <h1>Tech Fleece Tracksuit</h1>
+  <p>Complete Set – Jacket + Pants</p>
+  <div class="price">$29</div>
+
+  <label>Choose Colour</label>
+  <select id="colour">
+    <option>Black</option>
+    <option>Grey</option>
+    <option>Dark Grey</option>
+    <option>Navy</option>
+    <option>Blue</option>
+    <option>Brown</option>
+    <option>Green</option>
+    <option>Beige</option>
+    <option>White</option>
+  </select>
+
+  <label>Choose Size</label>
+  <select id="size">
+    <option>XS</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>XXL</option>
+    <option>XXXL</option>
+  </select>
+
+  <button onclick="orderProduct()">Order Now</button>
+  <p class="note">Colour and size availability must be confirmed before ordering.</p>
+</div>
+
+<script>
+function orderProduct() {
+  const colour = document.getElementById("colour").value;
+  const size = document.getElementById("size").value;
+  alert("Selected: Tech Fleece Tracksuit | $29 | " +
+        colour + " | Size " + size +
+        ". Please contact the store to confirm your order.");
+}
+</script>
+</body>
+</html>
