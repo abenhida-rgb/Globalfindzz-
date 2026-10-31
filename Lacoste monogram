@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monogram Tracksuit | GlobalFindzz</title>
+<style>
+body{font-family:Arial;background:#f5f5f5;margin:0;padding:25px 15px}
+.product{max-width:430px;margin:auto;background:white;padding:22px;border-radius:14px}
+h1{font-size:25px}
+.price{font-size:28px;font-weight:bold;margin:15px 0}
+select,button{width:100%;padding:13px;margin:9px 0 16px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{background:#111;color:white;border:0;cursor:pointer}
+.note{font-size:13px;color:#666}
+</style>
+</head>
+<body>
+<div class="product">
+<h1>Monogram Tracksuit</h1>
+<p>Complete Set – Jacket + Pants</p>
+<div class="price">$32</div>
+
+<label>Choose Colour</label>
+<select id="colour">
+<option>Black</option>
+<option>Navy</option>
+<option>Grey</option>
+<option>White</option>
+<option>Beige</option>
+<option>Brown</option>
+<option>Green</option>
+<option>Blue</option>
+</select>
+
+<label>Choose Size</label>
+<select id="size">
+<option>XS</option><option>S</option><option>M</option>
+<option>L</option><option>XL</option>
+<option>XXL</option><option>XXXL</option>
+</select>
+
+<button onclick="orderProduct()">Order Now</button>
+<p class="note">Please confirm colour and size availability before ordering.</p>
+</div>
+
+<script>
+function orderProduct(){
+const colour=document.getElementById('colour').value;
+const size=document.getElementById('size').value;
+alert('Monogram Tracksuit | $32 | '+colour+' | Size '+size+
+'. Please contact the store to confirm your order.');
+}
+</script>
+</body>
+</html>
