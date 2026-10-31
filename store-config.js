@@ -1,5 +1,5 @@
 window.STORE_CONFIG = {
-  storeName: "GlobalFindzz",
+  storeName: "GLOBALFINDZZ",
   currency: "USD",
   whatsappNumber: "REPLACE_WITH_YOUR_WHATSAPP_NUMBER",
   wechatId: "AHMEDLEBOSS"
