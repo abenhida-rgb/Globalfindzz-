@@ -19,21 +19,21 @@
   }
 
   function sendOrder(product, colour, size) {
-    const message = [
-      "Hello GlobalFindzz, I would like to ask about:",
-      product.name,
-      "Price: " + (product.price == null ? "Please quote" : money(product.price)),
-      "Colour: " + colour,
-      "Size: " + size,
-      "Please confirm availability and delivery."
-    ].join("\n");
+    document.getElementById("checkout-product").value = product.name || "";
+    document.getElementById("checkout-colour").value = colour || "";
+    document.getElementById("checkout-size").value = size || "";
+    const overlay = document.getElementById("checkout-overlay");
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("checkout-open");
+    document.getElementById("customer-name").focus();
+  }
 
-    const number = String(config.whatsappNumber || "").replace(/\D/g, "");
-    if (number && number !== "REPLACE_WITH_YOUR_WHATSAPP_NUMBER") {
-      window.open("https://wa.me/" + number + "?text=" + encodeURIComponent(message), "_blank", "noopener");
-    } else {
-      notify("Please contact us on WeChat: " + (config.wechatId || "AHMEDLEBOSS"));
-    }
+  function closeCheckout() {
+    const overlay = document.getElementById("checkout-overlay");
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("checkout-open");
   }
 
   function makeSelect(label, values) {
@@ -106,6 +106,46 @@
     card.append(photo, info);
     return card;
   }
+
+document.getElementById("checkout-close").addEventListener("click", closeCheckout);
+  document.getElementById("checkout-overlay").addEventListener("click", event => {
+    if (event.target.id === "checkout-overlay") closeCheckout();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeCheckout();
+  });
+  document.getElementById("checkout-form").addEventListener("submit", event => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const productName = document.getElementById("checkout-product").value;
+    const product = products.find(item => item.name === productName);
+    const details = [
+      "Hello GlobalFindzz, I would like to place an order.",
+      "",
+      "Product: " + productName,
+      "Price: " + (!product || product.price == null ? "Please quote" : money(product.price)),
+      "Colour: " + document.getElementById("checkout-colour").value,
+      "Size: " + document.getElementById("checkout-size").value,
+      "",
+      "CUSTOMER & DELIVERY",
+      "Full name: " + form.get("name"),
+      "Phone / WhatsApp: " + form.get("phone"),
+      "Country/region: " + form.get("country"),
+      "City: " + form.get("city"),
+      "Postal code: " + (form.get("postcode") || "Not provided"),
+      "Street address: " + form.get("address"),
+      "Notes: " + (form.get("notes") || "None"),
+      "",
+      "Please confirm stock, shipping price, delivery estimate and any customs/tax before payment."
+    ];
+    const number = String(config.whatsappNumber || "").replace(/\D/g, "");
+    if (!number || number === "REPLACE_WITH_YOUR_WHATSAPP_NUMBER") {
+      notify("WhatsApp is not configured. Please contact us on WeChat: " + (config.wechatId || "AHMEDLEBOSS"));
+      return;
+    }
+    window.open("https://wa.me/" + number + "?text=" + encodeURIComponent(details.join("\n")), "_blank", "noopener");
+    closeCheckout();
+  });
 
   products.forEach((product, index) => grid.append(renderProduct(product, index)));
 
