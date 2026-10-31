@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GLOBALFINDZZ — Tracksuit Catalogue</title><link rel="stylesheet" href="styles.css">
+<meta name="theme-color" content="#ffffff">
+<title>GLOBALFINDZZ | Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="topline">GLOBALFINDZZ · MEN'S STREETWEAR · WORLDWIDE INQUIRIES</div>
 <header class="header">
-<a class="logo" href="#"><span class="logo-mark">G.</span><span>GLOBALFINDZZ<small>YOUR STYLE. YOUR FIND.</small></span></a>
-<nav><a href="#shop">Catalogue</a><a href="#contact">Contact</a></nav>
+<a class="brand" href="#"><span class="brand-icon">G</span><span>GLOBALFINDZZ<small>CURATED STREETWEAR</small></span></a>
+<a class="contact-top" href="#contact">CONTACT <span>↗</span></a>
 </header>
 <main>
-<section class="hero">
-<div class="hero-copy"><p class="kicker">THE TRACKSUIT EDIT</p><h1>Streetwear.<br><em>Made simple.</em></h1>
-<p class="hero-desc">Explore our selected tracksuit styles. Choose your colour and size, then message us to confirm stock and delivery.</p>
-<a class="btn btn-dark" href="#shop">VIEW CATALOGUE ↗</a></div>
-<div class="hero-visual"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=90" alt="Streetwear fashion editorial"><div class="hero-label"><strong>THE<br>TRACKSUIT<br>EDIT.</strong></div></div>
+<section class="intro">
+<p class="eyebrow">GLOBALFINDZZ / COLLECTION 01</p>
+<h1>THE TRACKSUIT<br><span>COLLECTION.</span></h1>
+<p>Choose your style. Pick your size. Contact us to order.</p>
 </section>
-<section class="shop" id="shop"><p class="kicker">GLOBALFINDZZ / CURRENT SELECTION</p><h2>Our <em>catalogue.</em></h2>
+<section class="catalogue" id="catalogue">
+<div class="catalogue-heading"><h2>SHOP THE COLLECTION</h2><span>02 ITEMS</span></div>
 <div class="product-grid" id="product-grid"></div>
-<p class="catalog-note">Product photos are style references. Brand, model, material, availability and delivery details must be confirmed with us before ordering. We do not claim these items are official or authentic branded products.</p>
 </section>
-<section class="contact" id="contact"><div><h2>Ready to <em>order?</em></h2><p>Send us the product name, colour and size. We'll confirm availability and shipping details.</p></div>
-<div class="contact-actions"><a class="contact-link" id="whatsapp-contact" href="#">WhatsApp ↗</a><button class="contact-link" id="wechat-copy" type="button">WeChat: <span id="wechat-label">AHMEDLEBOSS</span></button></div>
+<section class="contact" id="contact">
+<div><p class="eyebrow">NEED HELP?</p><h2>Let's get<br>you sorted.</h2></div>
+<div class="contact-actions">
+<a id="whatsapp-contact" href="#">WHATSAPP <span>↗</span></a>
+<button id="wechat-copy" type="button">WECHAT <strong id="wechat-label">AHMEDLEBOSS</strong><span>COPY ↗</span></button>
+</div>
 </section>
 </main>
-<footer>© <span id="year"></span> GLOBALFINDZZ · MEN'S STREETWEAR</footer><div class="toast" id="toast"></div>
+<footer><span>© <span id="year"></span> GLOBALFINDZZ</span><span>WORLDWIDE INQUIRIES</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="products.js"></script><script src="store-config.js"></script><script src="script.js"></script>
 </body></html>
