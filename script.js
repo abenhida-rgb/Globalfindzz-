@@ -74,13 +74,18 @@
       "silver frame / dark lenses": "grayscale(.75) brightness(1.08)",
       "black frame": "grayscale(1) brightness(.65) contrast(1.15)"
     };
-    colour.addEventListener("change", () => {
+    function updateColourPreview() {
       const img = photo.querySelector("img");
       if (!img) return;
-      const selected = colour.value.trim().toLowerCase();
-      img.style.filter = colourFilters[selected] || "none";
-      img.style.transition = "filter .25s ease";
-    });
+      const selected = colour.value.trim().toLowerCase().replace(/\\s+/g, " ");
+      img.style.transition = "filter .3s ease";
+      img.style.filter = selected ? (colourFilters[selected] || "none") : "none";
+      img.dataset.selectedColour = selected;
+      photo.dataset.selectedColour = selected;
+    }
+    colour.addEventListener("change", updateColourPreview);
+    colour.addEventListener("input", updateColourPreview);
+    if (colour.value) updateColourPreview();
     options.append(colour, size);
     const actions = document.createElement("div"); actions.className = "product-actions";
     const favorite = document.createElement("button"); favorite.type = "button"; favorite.className = "favorite-button"; favorite.setAttribute("aria-label", "Toggle favorite"); favorite.textContent = favorites.includes(product.id) ? "♥" : "♡";
