@@ -35,7 +35,7 @@ window.STORE_PRODUCTS = [
     name: "Vintage Metal Frame Sunglasses",
     price: 10,
     description: "Unisex vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
-    image: "https://nuef.tokyo/cdn/shop/files/241028_NUEF-TOKYO0580.jpg?v=1759914204&width=1500",
+    image: "https://editorialist.com/thumbnail/600/2024/1/028/559/925/28559925~one-color_0.webp?quality=60&width=454",
     colours: ["Gold frame / dark lenses", "Silver frame / dark lenses", "Black frame", "Brown lenses"],
     sizes: ["One size"]
   },
