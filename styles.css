@@ -74,3 +74,20 @@ body.checkout-open{overflow:hidden}
 #cart-checkout:disabled{opacity:.45;cursor:not-allowed}
 @media(max-width:760px){.catalogue-tools{grid-template-columns:1fr 1fr}.catalogue-tools input[type=search]{grid-column:1/-1}.tracking{grid-template-columns:1fr;padding:38px 6%}.reviews{padding:38px 6%}.review-list{grid-template-columns:1fr}}
 @media(max-width:520px){.cart-panel{padding:22px 17px}.tracking-row{flex-direction:column}.tracking-row button{min-height:42px}.review-form{grid-template-columns:1fr}.review-form>*{grid-column:1/-1}.preferences{gap:8px}.preferences label{font-size:9px}}
+
+/* Brand-style product detail and variant selection */
+.product-detail-overlay{z-index:40}
+.product-detail-panel{position:relative;width:min(100%,980px);max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);padding:28px;border:1px solid var(--line);box-shadow:0 20px 70px rgba(0,0,0,.2)}
+.detail-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:30px;align-items:start}
+.detail-gallery{min-width:0}.detail-main-image{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#f0f0ec}
+.detail-thumbnails{display:flex;gap:8px;margin-top:10px;overflow:auto}
+.detail-thumb{width:66px;height:66px;padding:3px;border:1px solid var(--line);background:white;flex:0 0 auto;cursor:pointer}
+.detail-thumb.active{border:2px solid var(--ink)}.detail-thumb img{width:100%;height:100%;object-fit:contain}
+.detail-copy{padding:12px 8px 8px 0}.detail-copy h2{font:800 clamp(24px,4vw,36px)/1.15 Manrope;margin:10px 0}
+.detail-price{font:800 23px Manrope;margin:12px 0}.detail-description{font-size:12px;line-height:1.8;color:var(--muted);margin:12px 0 24px}
+.detail-label{display:block;font-size:9px;font-weight:800;letter-spacing:1.2px;margin:20px 0 9px}
+.variant-options{display:flex;gap:8px;flex-wrap:wrap}.variant-chip{padding:10px 13px;border:1px solid var(--line);background:white;color:var(--ink);font:600 11px 'DM Sans',sans-serif;cursor:pointer}
+.variant-chip.selected{border:2px solid var(--ink);background:#eeeee8;padding:9px 12px}.size-chip{min-width:42px}
+.detail-quantity{width:88px;padding:11px;border:1px solid var(--line);background:white;font:13px 'DM Sans',sans-serif}
+#detail-add{margin-top:18px}.product-photo[role=button]{cursor:pointer}
+@media(max-width:700px){.product-detail-panel{padding:22px 16px}.detail-layout{grid-template-columns:1fr;gap:14px}.detail-copy{padding:0}.detail-main-image{max-height:48vh}.product-detail-panel .checkout-close{position:sticky;float:right;top:0;z-index:2}}
