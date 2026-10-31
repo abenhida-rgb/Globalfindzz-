@@ -65,8 +65,8 @@ window.STORE_PRODUCTS = [
     name: "Black Knight Matte Bracelet – Grey H Clasp",
     price: 14.99,
     description: "Unbranded matte enamel-style bangle with a grey-tone H-shaped clasp and a minimalist couple-inspired look. Confirm the exact item, material, finish and packaging before ordering. Not represented as an authentic Hermès product. Shipping is calculated separately.",
-    image: "https://assets.hermes.com/is/image/hermesproduct/clic-hh-bracelet--703203FB5H-front-wm-1-0-0-1000-1000_g.jpg",
-    colours: ["Matte Black with Grey H Clasp"],
+    image: "https://assets.hermes.cn/is/image/hermesproduct/703203FB5H_front_wm_101?%24product_default_bg%24=",
+    colours: ["Gris Clair Mat", "Grey H clasp"],
     sizes: ["One size"]
   }
 ];
