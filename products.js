@@ -34,7 +34,7 @@ window.STORE_PRODUCTS = [
     category: "ACCESSORIES",
     name: "Vintage Metal Frame Sunglasses",
     price: 10,
-    description: "Unisex vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
+    description: "Men's vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
     image: "https://www.retrospectacle.co.uk/cdn/shop/files/Dunhill6161Men_sSunglasses.png?v=1778062126&width=800",
     colours: ["Gold frame / dark lenses", "Silver frame / dark lenses", "Black frame", "Brown lenses"],
     sizes: ["One size"]
@@ -54,7 +54,7 @@ window.STORE_PRODUCTS = [
     category: "FOOTWEAR",
     name: "Everyday Sneakers",
     price: null,
-    description: "Browse available sneaker styles. Ask us for photos and prices.",
+    description: "Men's casual everyday sneakers. Ask us to confirm the exact style, colour and available sizes.",
     image: "https://kizik.com/cdn/shop/files/MATH2605_Men_sAthens2_DoeSkin-NavalAcademy_SS2026_Studio_FullBody_DSC02348_203-1600x1600-f198de4.jpg?v=1768402890&width=1600",
     colours: ["White", "Black", "Grey", "Mixed"],
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
