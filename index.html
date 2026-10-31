@@ -1,37 +1,52 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<title>GLOBALFINDZZ | Catalogue</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Explore the selected tracksuit collection at GlobalFindzz.">
+  <title>GLOBALFINDZZ — Selected Streetwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-<a class="brand" href="#"><span class="brand-icon">G</span><span>GLOBALFINDZZ<small>CURATED STREETWEAR</small></span></a>
-<a class="contact-top" href="#contact">CONTACT <span>↗</span></a>
-</header>
-<main>
-<section class="intro">
-<p class="eyebrow">GLOBALFINDZZ / COLLECTION 01</p>
-<h1>THE TRACKSUIT<br><span>COLLECTION.</span></h1>
-<p>Choose your style. Pick your size. Contact us to order.</p>
-</section>
-<section class="catalogue" id="catalogue">
-<div class="catalogue-heading"><h2>SHOP THE COLLECTION</h2><span>02 ITEMS</span></div>
-<div class="product-grid" id="product-grid"></div>
-</section>
-<section class="contact" id="contact">
-<div><p class="eyebrow">NEED HELP?</p><h2>Let's get<br>you sorted.</h2></div>
-<div class="contact-actions">
-<a id="whatsapp-contact" href="#">WHATSAPP <span>↗</span></a>
-<button id="wechat-copy" type="button">WECHAT <strong id="wechat-label">AHMEDLEBOSS</strong><span>COPY ↗</span></button>
-</div>
-</section>
-</main>
-<footer><span>© <span id="year"></span> GLOBALFINDZZ</span><span>WORLDWIDE INQUIRIES</span></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="products.js"></script><script src="store-config.js"></script><script src="script.js"></script>
-</body></html>
+  <header class="header">
+    <a class="logo" href="#" aria-label="GlobalFindzz home"><span class="logo-mark">G</span><span class="logo-type">GLOBALFINDZZ<small>SELECTED STREETWEAR</small></span></a>
+    <nav class="nav"><a href="#catalogue">Catalogue</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">A SMALL, SELECTED COLLECTION</p>
+      <h1>Find your<br><span>everyday fit.</span></h1>
+      <p class="intro-copy">Two tracksuit styles. A choice of colours and sizes. Simple ordering through WeChat.</p>
+      <a class="intro-link" href="#catalogue">VIEW THE COLLECTION <span>↓</span></a>
+    </section>
+
+    <section class="catalogue" id="catalogue">
+      <div class="section-head">
+        <div><p class="eyebrow">GLOBALFINDZZ / 001</p><h2>The catalogue</h2></div>
+        <p class="item-count">02 STYLES</p>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="small-note">Product photos are visual references. Please contact us to confirm the exact item, available colours, sizes and delivery before ordering.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div><p class="eyebrow">QUESTIONS OR ORDERS</p><h2>Let's talk.</h2><p class="contact-copy">Tell us which style you like and we'll help confirm the details.</p></div>
+      <div class="contact-options">
+        <a id="whatsapp-contact" href="#">WHATSAPP <span>↗</span></a>
+        <button id="wechat-copy" type="button">WECHAT <strong id="wechat-label">AHMEDLEBOSS</strong><span class="copy-label">COPY ID</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> GLOBALFINDZZ</span><span>SELECTED STREETWEAR</span><a href="#">BACK TO TOP ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="products.js"></script>
+  <script src="store-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
