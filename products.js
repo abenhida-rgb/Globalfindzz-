@@ -5,7 +5,7 @@ window.STORE_PRODUCTS = [
     name: "Nike Tech Fleece Tracksuit",
     price: 29,
     description: "Two-piece tracksuit set. Ask us to confirm the exact colour and size.",
-    image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1100&q=85",
+    image: "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw95c76be6/nk/f4c/b/b/9/3/d/f4cbb93d_37e3_46d2_b4d4_e3a5e8415533.jpg?sh=2000&sm=fit&sw=2000",
     colours: ["Black", "Grey", "Dark Grey", "Navy", "Blue", "Brown", "Green", "Beige"],
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
   },
