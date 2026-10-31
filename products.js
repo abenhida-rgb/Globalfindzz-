@@ -73,10 +73,15 @@ window.STORE_PRODUCTS = [
   ,{
     id: "goyard-style-belt",
     category: "ACCESSORIES",
-    name: "Goyard-Style Sénat Pocket Pouch",
+    name: "Goyard-Style Wallet",
     price: 14.99,
-    description: "Unbranded rectangular zip pouch inspired by the Sénat-style pocket shape, with a geometric chevron pattern. Available in black, green and yellow. Not an authentic Goyard product. Confirm exact material, colour and sizing before ordering. Shipping is calculated separately.",
-    image: "https://cdn.shopify.com/s/files/1/0590/9204/1917/files/PochetteUomoFantasiaGeometricaconLaccettodaPolso_ab0c5dd1-a27a-41d0-a55f-6956ec30f42b.png?format=webp&v=1765622921&width=1920",
+    description: "Compact card wallet with a geometric chevron pattern. Available in black, green and yellow. Unbranded, style-inspired design; not represented as an authentic Goyard product. Shipping is calculated separately.",
+    image: "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-black-front-view.jpg?v=1771333796&width=1200",
+    variantImages: {
+      "Black": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-black-front-view.jpg?v=1771333796&width=1200",
+      "Green": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-green-front-view.jpg?v=1771333796&width=1200",
+      "Yellow": "https://sands-uae.com/cdn/shop/files/goyard-saint-sulpice-card-wallet-yellow-front-view.jpg?v=1771327312&width=1200"
+    },
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
   }
