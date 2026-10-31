@@ -65,7 +65,7 @@ window.STORE_PRODUCTS = [
     name: "Black Knight Matte Bracelet – Grey H Clasp",
     price: 14.99,
     description: "Unbranded matte enamel-style bangle with a grey-tone H-shaped clasp and a minimalist couple-inspired look. Confirm the exact item, material, finish and packaging before ordering. Not represented as an authentic Hermès product. Shipping is calculated separately.",
-    image: "",
+    image: "https://assets.hermes.com/is/image/hermesproduct/brazalete-clic-hh--703203FB5H-front-wm-1-0-0-1000-1000_g.jpg",
     supplierUrl: "https://detail.1688.com/offer/789306907856.html",
     colours: ["Steel", "Black Knight"],
     sizes: ["One size"]
@@ -76,7 +76,7 @@ window.STORE_PRODUCTS = [
     name: "Goyard-Style Sénat Pocket Pouch",
     price: 14.99,
     description: "Unbranded rectangular zip pouch inspired by the Sénat-style pocket shape, with a geometric chevron pattern. Available in black, green and yellow. Not an authentic Goyard product. Confirm exact material, colour and sizing before ordering. Shipping is calculated separately.",
-    image: "",
+    image: "https://bananarepublic.gap.com/webcontent/0014/890/346/cn14890346.jpg",
     colours: ["Black", "Green", "Yellow"],
     sizes: ["One size"]
   }
