@@ -23,7 +23,7 @@ window.STORE_PRODUCTS = [
     id: "boken-slippers",
     category: "FOOTWEAR",
     name: "BOKEN Closed-Toe Slip-On Slippers",
-    price: null,
+    price: 8,
     description: "Men's style. Comfortable closed-toe slip-on slippers with a thick sole and easy buckle detail. Autumn/winter casual wear. Please confirm material, anti-slip performance and available sizes with us.",
     image: "https://ericcomfortshoes.com/cdn/shop/collections/Adobe_Express_-_file_3.jpg?v=1762616297",
     colours: ["Khaki", "Brown", "Black"],
@@ -52,10 +52,10 @@ window.STORE_PRODUCTS = [
   {
     id: "sneakers",
     category: "FOOTWEAR",
-    name: "Everyday Sneakers",
-    price: null,
+    name: "nike tn ",
+    price: 44,
     description: "Men's casual everyday sneakers. Ask us to confirm the exact style, colour and available sizes.",
-    image: "https://kizik.com/cdn/shop/files/MATH2605_Men_sAthens2_DoeSkin-NavalAcademy_SS2026_Studio_FullBody_DSC02348_203-1600x1600-f198de4.jpg?v=1768402890&width=1600",
+    image: "https://share.google/a6azsILAUeUc2h0N9",
     colours: ["White", "Black", "Grey", "Mixed"],
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
