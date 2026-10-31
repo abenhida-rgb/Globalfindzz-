@@ -27,7 +27,7 @@
     catch (_) { return symbols[currency] + converted.toFixed(2); }
   }
   let detailProduct = null;
-  function openProductDetail(product, selectedColour = "", selectedSize = "") {
+  function colourHex(value) { const v=String(value).toLowerCase(); if(v.includes("black"))return "#202020"; if(v.includes("white"))return "#f7f7f4"; if(v.includes("grey")||v.includes("gray")||v.includes("silver"))return "#9b9b98"; if(v.includes("navy"))return "#182b49"; if(v.includes("blue"))return "#376caa"; if(v.includes("green"))return "#315c43"; if(v.includes("beige")||v.includes("khaki"))return "#c9b991"; if(v.includes("brown"))return "#76513a"; if(v.includes("gold"))return "#c5a04b"; if(v.includes("yellow"))return "#e2c64b"; if(v.includes("steel"))return "#aeb4b8"; return "#d8d8d2"; }\n  function openProductDetail(product, selectedColour = "", selectedSize = "") {
     detailProduct = product;
     const overlay = document.getElementById("product-detail-overlay");
     const gallery = document.getElementById("detail-gallery");
@@ -48,7 +48,7 @@
     const oldSource=document.getElementById("detail-source-link"); if(oldSource) oldSource.remove();
     if(product.supplierUrl){const source=document.createElement("a");source.id="detail-source-link";source.className="detail-source-link";source.href=product.supplierUrl;source.target="_blank";source.rel="noopener noreferrer";source.textContent="View supplier listing ↗";desc.insertAdjacentElement("afterend",source);}
     colours.replaceChildren(); const colourValues=product.colours || ["One colour"];
-    colourValues.forEach((value,i)=>{const selected=selectedColour ? value===selectedColour : i===0;const b=document.createElement("button");b.type="button";b.className="variant-chip"+(selected?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(selected));b.addEventListener("click",()=>{colours.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");const variantImage=product.variantImages && (product.variantImages[value] || product.variantImages[value.toLowerCase()]);if(variantImage)main.src=variantImage;});colours.append(b);});
+    colourValues.forEach((value,i)=>{const selected=selectedColour ? value===selectedColour : i===0;const b=document.createElement("button");b.type="button";b.className="variant-chip colour-chip"+(selected?" selected":"");b.setAttribute("aria-pressed",String(selected));const dot=document.createElement("span");dot.className="colour-dot";dot.style.backgroundColor=colourHex(value);b.append(dot,document.createTextNode(value));b.addEventListener("click",()=>{colours.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");const variantImage=product.variantImages && (product.variantImages[value] || product.variantImages[value.toLowerCase()]);if(variantImage){main.src=variantImage;}else{main.src=images[0]||"";}});colours.append(b);});
     sizes.replaceChildren(); (product.sizes || ["One size"]).forEach((value,i)=>{const selected=selectedSize ? value===selectedSize : i===0;const b=document.createElement("button");b.type="button";b.className="variant-chip size-chip"+(selected?" selected":"");b.textContent=value;b.setAttribute("aria-pressed",String(selected));b.addEventListener("click",()=>{sizes.querySelectorAll("button").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-pressed","false");});b.classList.add("selected");b.setAttribute("aria-pressed","true");});sizes.append(b);});
     qty.value="1"; overlay.classList.add("open");overlay.setAttribute("aria-hidden","false");document.body.classList.add("checkout-open");
   }
@@ -185,8 +185,7 @@
     const localOrders = load("gf-orders", []); localOrders.push({id:orderId,status:"New — awaiting confirmation",createdAt:new Date().toISOString(),items, total, country:form.get("country")}); save("gf-orders",localOrders);
     const number = String(config.whatsappNumber || "").replace(/\D/g,"");
     if (!number) { notify("WhatsApp is not configured. Contact us on WeChat: "+(config.wechatId||"AHMEDLEBOSS")); return; }
-    window.open("https://wa.me/"+number+"?text="+encodeURIComponent(details.join("
-")),"_blank","noopener");
+    window.open("https://wa.me/"+number+"?text="+encodeURIComponent(details.join("\n")),"_blank","noopener");
     cart.clear(); save("gf-cart",[]); updateCounts(); closeCheckout(); event.currentTarget.reset(); document.getElementById("tracking-number").value = orderId; document.getElementById("tracking-result").textContent = "Order reference: "+orderId+" — New, awaiting confirmation (saved only in this browser).";
   });
   document.getElementById("show-favorites").addEventListener("click", () => { showOnlyFavorites = !showOnlyFavorites; document.getElementById("show-favorites").textContent = showOnlyFavorites ? "SHOW ALL PRODUCTS" : "♡ Favorites " + favorites.length; renderCatalog(); document.getElementById("catalogue").scrollIntoView({behavior:"smooth"}); });
