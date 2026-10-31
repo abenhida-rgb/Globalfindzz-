@@ -52,10 +52,10 @@ window.STORE_PRODUCTS = [
   {
     id: "sneakers",
     category: "FOOTWEAR",
-    name: "nike tn ",
+    name: "nike tn orginal",
     price: 44,
     description: "Men's casual everyday sneakers. Ask us to confirm the exact style, colour and available sizes.",
-    image: "https://share.google/a6azsILAUeUc2h0N9",
+    image: "https://www.google.com/search?tbm=isch&q=Nike+TN+Air+Max+Plus+men⁠",
     colours: ["White", "Black", "Grey", "Mixed"],
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
