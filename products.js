@@ -1,3 +1,11 @@
+function gfWalletArt(base, accent, open = false) {
+  const pattern = `<pattern id="motif" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M17 3 L29 17 L17 31 L5 17 Z M17 10 L23 17 L17 24 L11 17 Z" fill="none" stroke="${accent}" stroke-width="2" opacity=".8"/></pattern>`;
+  const body = open
+    ? `<path d="M115 300 Q115 265 150 265 H650 Q685 265 685 300 V560 H115 Z" fill="${base}" stroke="#252525" stroke-width="8"/><path d="M115 300 Q115 265 150 265 H650 Q685 265 685 300 V560 H115 Z" fill="url(#motif)"/><path d="M400 270 V560" stroke="#d7c6a4" stroke-width="7"/><rect x="145" y="330" width="225" height="180" rx="12" fill="#eee4d4" stroke="#c7b89e" stroke-width="5"/><rect x="430" y="330" width="225" height="180" rx="12" fill="#eee4d4" stroke="#c7b89e" stroke-width="5"/><path d="M160 380 H355 M445 380 H640 M160 430 H355 M445 430 H640" stroke="${base}" stroke-width="8" opacity=".7"/>`
+    : `<rect x="135" y="230" width="530" height="350" rx="42" fill="${base}" stroke="#252525" stroke-width="9"/><rect x="135" y="230" width="530" height="350" rx="42" fill="url(#motif)"/><path d="M160 255 Q400 225 640 255" stroke="#ffffff" stroke-width="7" opacity=".28" fill="none"/><path d="M155 545 Q400 575 645 545" stroke="#111111" stroke-width="8" opacity=".22" fill="none"/><rect x="585" y="365" width="22" height="82" rx="8" fill="#d9c7a1" stroke="#8b7857" stroke-width="3"/>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#faf8f3"/><stop offset="1" stop-color="#e9e3d8"/></linearGradient><linearGradient id="leather" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".16"/><stop offset="1" stop-color="#000000" stop-opacity=".18"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>${pattern}</defs><rect width="800" height="800" fill="url(#bg)"/><ellipse cx="400" cy="615" rx="270" ry="42" fill="#000" opacity=".18" filter="url(#shadow)"/><g>${body}<path d="M135 230 H665 V580 H135 Z" fill="url(#leather)" opacity=".16"/></g><text x="400" y="700" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" letter-spacing="4" fill="#6b665e">UNBRANDED BIFOLD WALLET</text></svg>`;
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
 window.STORE_PRODUCTS = [
   {
     id: "nike-tech",
@@ -31,22 +39,20 @@ window.STORE_PRODUCTS = [
   },
   {
     id: "sunglasses",
+    category: "ACCid: "victoire-style-wallet",
     category: "ACCESSORIES",
-    name: "Vintage Metal Frame Sunglasses",
-    price: 10,
-    description: "Men's vintage-inspired slim metal-frame sunglasses with a classic European & American look. Prescription-lens compatibility should be confirmed before ordering.",
-    image: "https://www.retrospectacle.co.uk/cdn/shop/files/Dunhill6161Men_sSunglasses.png?v=1778062126&width=800",
-    colours: ["Gold frame / dark lenses", "Silver frame / dark lenses", "Black frame", "Brown lenses"],
-    sizes: ["One size"]
-  },
-  {
-    id: "y2k-patchwork-hoodie",
-    category: "CLOTHING",
-    name: "Men's Y2K Contrast Patchwork Hooded Sweatshirt",
-    price: 17,
-    description: "Men's short-length Y2K-inspired contrast patchwork hooded sweatshirt with long sleeves and an oversized fit. Dark grey, 100% polyester. Check measurements before ordering.",
-    image: "https://img.ltwebstatic.com/v4/j/pi/2025/10/21/c1/1761010339ff09c9df4ebe55bc734b6a2d885fb119_thumbnail_900x.webp",
-    colours: ["Dark Grey"],
+    name: "Victoire-Style Bifold Wallet",
+    price: 14.99,
+    description: "Compact bi-fold wallet with an abstract geometric canvas pattern, card slots and space for notes. Unbranded style-inspired design; not an authentic Goyard product. Product artwork is an illustrative mock-up; confirm the exact supplier item, material and colour before ordering. Shipping is calculated separately.",
+    image: gfWalletArt("#244b37", "#d8d0ae"),
+    gallery: [gfWalletArt("#244b37", "#d8d0ae", true)],
+    variantImages: {
+      "Black": gfWalletArt("#242424", "#c8c1ad"),
+      "Green": gfWalletArt("#244b37", "#d8d0ae"),
+      "Yellow": gfWalletArt("#c5a43b", "#f0e4bf")
+    },
+    colours: ["Black", "Green", "Yellow"],
+    sizes: ["One size"]   colours: ["Dark Grey"],
     sizes: ["S", "M", "L", "XL"]
   },
   {
