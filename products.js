@@ -52,8 +52,8 @@ window.STORE_PRODUCTS = [
   {
     id: "sneakers",
     category: "FOOTWEAR",
-    name: "Nike Air Max Plus TN",
-    price: 44,
+    name: "Nike Air Max TN original",
+    price: 34,
     description: "Men's Nike Air Max Plus TN sneakers. Product photo sourced from Nike's official China store. Confirm the exact colourway and available sizes before ordering.",
     image: "https://static.nike.com.cn/a/images/t_PDP_1728_v1/f_auto%2Cq_auto%3Aeco%2Cu_9ddf04c7-2a9a-4d76-add1-d15af8f0263d%2Cc_scale%2Cfl_relative%2Cw_1.0%2Ch_1.0%2Cfl_layer_apply/f0e0ab7b-54f7-4df9-b16e-cfe3ac5567ef/NIKE%2BAIR%2BMAX%2BPLUS%2BFA.png",
     colours: ["White", "Black", "Grey", "Mixed"],
