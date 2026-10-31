@@ -23,7 +23,7 @@ window.STORE_PRODUCTS = [
     id: "crocs-clog",
     category: "FOOTWEAR",
     name: "Classic Clog",
-    price: null,
+    price: 11,
     description: "Classic clog style. Message us for available colours and sizes.",
     image: "",
     colours: ["Black", "White", "Navy", "Khaki", "Pink", "Other"],
