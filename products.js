@@ -13,7 +13,7 @@ window.STORE_PRODUCTS = [
     name: "Lacoste Monogram Tracksuit",
     price: 32,
     description: "Two-piece monogram-style tracksuit. Choose your preferred colour and size.",
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1100&q=85",
+    image: "https://images.asos-media.com/products/lacoste-monogram-trackies-in-black-part-of-a-set/208989982-1-blackgraphite?$n_750w$=&fit=crop&hei=750&wid=750",
     colours: ["Black", "Navy", "Grey", "White", "Beige", "Brown", "Green", "Blue"],
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
   }
