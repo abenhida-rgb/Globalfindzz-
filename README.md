@@ -1,34 +1,23 @@
-# Global Style — free online store template
+# GLOBALFINDZZ
 
-A responsive, professional static store for clothing, shoes and accessories. Includes category filters, sample product cards, editable prices, and WhatsApp / WeChat inquiry actions.
+A clean, responsive two-product tracksuit catalogue.
+
+## Catalogue
+- Nike Tech Fleece Tracksuit — $29
+- Lacoste Monogram Tracksuit — $32
 
 ## Files
-- `index.html` — page content and structure
-- `styles.css` — responsive styling
-- `products.js` — product names, categories, prices, descriptions and image URLs
-- `store-config.js` — currency, WhatsApp number and WeChat ID
-- `script.js` — filters and order/contact interactions
+- `index.html` — page structure
+- `styles.css` — responsive design
+- `products.js` — catalogue products, prices, sizes and colours
+- `store-config.js` — store contact settings
+- `script.js` — product rendering and order/contact actions
 
-## Before publishing
-1. Open `store-config.js` in a text editor.
-2. Replace `REPLACE_WITH_YOUR_WHATSAPP_NUMBER` with your WhatsApp number including country code, digits only. Example format: `447700900123` (example only; do not use unless it is your number).
-3. Replace `REPLACE_WITH_YOUR_WECHAT_ID` with your exact WeChat ID.
-4. Open `products.js` and edit sample names, prices, descriptions and photo URLs. Prices are examples, not live offers.
-5. Replace sample stock photos with your own product images or images you have permission to use. The current images are remote Unsplash image URLs and need internet access.
-6. Update store name, currency and contact details as desired.
-7. Test all contact buttons and product details on phone and computer.
+## Contact setup
+The WeChat ID is set to `AHMEDLEBOSS`. To enable WhatsApp ordering, replace the placeholder in `store-config.js` with your WhatsApp number, including country code and digits only.
 
-## Free publishing option: GitHub Pages
-1. Sign in or create a free account at https://github.com
-2. Create a new **public** repository, e.g. `global-style-store`.
-3. Upload the contents of this folder to the repository root (upload the files, not the ZIP).
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Choose branch `main` and folder `/(root)`, then save.
-7. Wait for GitHub Pages to publish; the public URL appears in the Pages settings, usually `https://YOUR-USERNAME.github.io/global-style-store/`.
+## Product images
+The current remote photos are visual references, not verified product photographs. Replace the image URLs in `products.js` with your own product photos when available.
 
-## Notes
-- This is a static catalog, not a full checkout system. Orders are inquiries through WhatsApp; WeChat opens a copy-ID action.
-- No payment details are collected on this site.
-- Free hosting and service terms may change. Do not upload private customer information to a public repository.
-- Product photos/prices/availability are samples. Confirm stock, delivery, returns and payment arrangements directly with customers.
+## Hosting
+This site is a static catalogue and can be hosted with GitHub Pages. It does not process payments or collect customer payment information.
