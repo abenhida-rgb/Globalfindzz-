@@ -27,7 +27,8 @@
     catch (_) { return symbols[currency] + converted.toFixed(2); }
   }
   let detailProduct = null;
-  function colourHex(value) { const v=String(value).toLowerCase(); if(v.includes("black"))return "#202020"; if(v.includes("white"))return "#f7f7f4"; if(v.includes("grey")||v.includes("gray")||v.includes("silver"))return "#9b9b98"; if(v.includes("navy"))return "#182b49"; if(v.includes("blue"))return "#376caa"; if(v.includes("green"))return "#315c43"; if(v.includes("beige")||v.includes("khaki"))return "#c9b991"; if(v.includes("brown"))return "#76513a"; if(v.includes("gold"))return "#c5a04b"; if(v.includes("yellow"))return "#e2c64b"; if(v.includes("steel"))return "#aeb4b8"; return "#d8d8d2"; }\n  function openProductDetail(product, selectedColour = "", selectedSize = "") {
+  function colourHex(value) { const v=String(value).toLowerCase(); if(v.includes("black"))return "#202020"; if(v.includes("white"))return "#f7f7f4"; if(v.includes("grey")||v.includes("gray")||v.includes("silver"))return "#9b9b98"; if(v.includes("navy"))return "#182b49"; if(v.includes("blue"))return "#376caa"; if(v.includes("green"))return "#315c43"; if(v.includes("beige")||v.includes("khaki"))return "#c9b991"; if(v.includes("brown"))return "#76513a"; if(v.includes("gold"))return "#c5a04b"; if(v.includes("yellow"))return "#e2c64b"; if(v.includes("steel"))return "#aeb4b8"; return "#d8d8d2"; }
+  function openProductDetail(product, selectedColour = "", selectedSize = "") {
     detailProduct = product;
     const overlay = document.getElementById("product-detail-overlay");
     const gallery = document.getElementById("detail-gallery");
