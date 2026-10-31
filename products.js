@@ -42,11 +42,11 @@ window.STORE_PRODUCTS = [
   {
     id: "y2k-patchwork-hoodie",
     category: "CLOTHING",
-    name: "Y2K Short Patchwork Hooded Jacket",
+    name: "Men's Y2K Contrast Patchwork Hooded Sweatshirt",
     price: 17,
-    description: "Y2K-inspired short zip-up hooded sweatshirt jacket with long sleeves and a striped patchwork design. Women's style. Check fit and measurements before ordering.",
-    image: "https://kmoro.com/cdn/shop/files/S8d73f0c85a354c639b21a3d818bfaa98w_medium.webp?v=1768474374",
-    colours: ["White"],
+    description: "Men's short-length Y2K-inspired contrast patchwork hooded sweatshirt with long sleeves and an oversized fit. Dark grey, 100% polyester. Check measurements before ordering.",
+    image: "https://img.ltwebstatic.com/v4/j/pi/2025/10/21/c1/1761010339ff09c9df4ebe55bc734b6a2d885fb119_thumbnail_220x293.webp",
+    colours: ["Dark Grey"],
     sizes: ["S", "M", "L", "XL"]
   },
   {
