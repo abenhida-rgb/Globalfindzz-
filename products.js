@@ -69,4 +69,13 @@ window.STORE_PRODUCTS = [
     colours: ["Steel", "Black Knight"],
     sizes: ["One size"]
   }
+  ,{
+    id: "goyard-style-belt",
+    category: "ACCESSORIES",
+    name: "Goyard-Style Pattern Belt",
+    price: 14.99,
+    description: "Men's patterned canvas belt with a classic geometric monogram-inspired look. Available in black, green and yellow. Unbranded listing; not represented as an authentic Goyard product. Confirm material, buckle and sizing before ordering. Shipping is calculated separately.",
+    colours: ["Black", "Green", "Yellow"],
+    sizes: ["One size"]
+  }
 ];
