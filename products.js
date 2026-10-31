@@ -60,12 +60,13 @@ window.STORE_PRODUCTS = [
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
   ,{
-    id: "minimalist-bracelet",
+    id: "black-knight-letter-bracelet",
     category: "ACCESSORIES",
-    name: "Minimalist Bracelet",
+    name: "Black Knight Letter Bracelet",
     price: 14.99,
-    description: "Minimalist everyday bracelet. Unbranded listing; confirm material, finish and available colour before ordering. Shipping is calculated separately.",
-    colours: ["Gold tone", "Silver tone", "Black", "Other"],
+    description: "Matte black letter bracelet with a modern couple-inspired style. Confirm the exact letter, material and finish before ordering. Shipping is calculated separately.",
+    image: "https://down-ph.img.susercontent.com/file/sg-11134201-22090-wh0xee1jo1hv77",
+    colours: ["Matte Black"],
     sizes: ["One size"]
   }
 ];
