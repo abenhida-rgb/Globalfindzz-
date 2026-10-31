@@ -82,8 +82,9 @@ function orderProduct() {
   const size = document.getElementById("size").value;
   alert("Selected: Tech Fleece Tracksuit | $29 | " +
         colour + " | Size " + size +
-        ". Please contact the store to confirm your order.");
+        ". Please contact the store to confirm your order.");image: "./images/nike-tech.jpg"
 }
 </script>
 </body>
 </html>
+image: "./images/nike-tech.jpg"
