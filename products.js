@@ -25,7 +25,7 @@ window.STORE_PRODUCTS = [
     name: "Classic Clog",
     price: 11,
     description: "Classic clog style. Message us for available colours and sizes.",
-    image: "",
+    image: "./images/classic-clog.jpg",
     colours: ["Black", "White", "Navy", "Khaki", "Pink", "Other"],
     sizes: ["EU 36", "EU 37", "EU 38", "EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   },
