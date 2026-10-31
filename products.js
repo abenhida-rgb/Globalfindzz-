@@ -54,8 +54,8 @@ window.STORE_PRODUCTS = [
     category: "FOOTWEAR",
     name: "nike tn orginal",
     price: 44,
-    description: "Men's casual everyday sneakers. Ask us to confirm the exact style, colour and available sizes.",
-    image: "https://www.google.com/search?tbm=isch&q=Nike+TN+Air+Max+Plus+men⁠",
+    description: "Nike Air Max Plus TN men’s sneakers. Official Nike product image; confirm colourway and sizes before ordering.",
+    image: "https://static.nike.com/a/images/t_default/2f82c6a9-8fd7-4db0-b1b0-cb58c3f5f8a1/air-max-plus-mens-shoes.png",
     colours: ["White", "Black", "Grey", "Mixed"],
     sizes: ["EU 39", "EU 40", "EU 41", "EU 42", "EU 43", "EU 44", "EU 45"]
   }
