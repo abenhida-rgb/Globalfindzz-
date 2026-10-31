@@ -40,14 +40,14 @@ window.STORE_PRODUCTS = [
     sizes: ["One size"]
   },
   {
-    id: "streetwear-hoodie",
+    id: "y2k-patchwork-hoodie",
     category: "CLOTHING",
-    name: "Streetwear Hoodie",
-    price: null,
-    description: "Casual hoodie styles. Message us to see current designs.",
-    image: "",
-    colours: ["Black", "Grey", "White", "Navy", "Beige"],
-    sizes: ["S", "M", "L", "XL", "XXL", "XXXL"]
+    name: "Y2K Short Patchwork Hooded Jacket",
+    price: 17,
+    description: "Y2K-inspired short zip-up hooded sweatshirt jacket with long sleeves and a striped patchwork design. Women's style. Check fit and measurements before ordering.",
+    image: "https://kmoro.com/cdn/shop/files/S8d73f0c85a354c639b21a3d818bfaa98w_medium.webp?v=1768474374",
+    colours: ["White"],
+    sizes: ["S", "M", "L", "XL"]
   },
   {
     id: "sneakers",
