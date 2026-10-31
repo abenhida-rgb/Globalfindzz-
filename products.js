@@ -62,10 +62,10 @@ window.STORE_PRODUCTS = [
   ,{
     id: "black-knight-letter-bracelet",
     category: "ACCESSORIES",
-    name: "Black Knight Matte H Bracelet",
+    name: "Black Knight Matte H-Style Bracelet",
     price: 14.99,
-    description: "Matte black enamel-style cuff bracelet with an H-shaped clasp and a modern couple-inspired look. Unbranded listing; confirm material, dimensions and finish before ordering. Shipping is calculated separately.",
-    image: "https://p3.itc.cn/q_70/images03/20220610/a16c3a2464f7476a9c6a377f9253ad89.jpeg",
+    description: "Unbranded matte black enamel-style bangle with an H-shaped clasp and a minimalist couple-inspired look. Product photo is a style reference; confirm the exact item, material and packaging before ordering. Not represented as an authentic Hermès product. Shipping is calculated separately.",
+    image: "https://sands-uae.com/cdn/shop/files/hermes-clic-hh-so-black-bracelet-matte-enamel-front.jpg?v=1749027380&width=3840",
     colours: ["Matte Black"],
     sizes: ["One size"]
   }
